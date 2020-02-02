@@ -103,7 +103,7 @@ window.onload = function() {
             for (var y=0; y<256; y++) {
 
                 // Get the pixel index
-                var pixelindex = (y * width + x) * 4;
+                var pixelIndex = (y * width + x) * 4;
 
                 // XOR pattern
                 var red = ((x+offset) % 256) ^ ((y+offset) % 256);
@@ -112,10 +112,10 @@ window.onload = function() {
 
 
                 // Set the pixel data
-                texdata.data[pixelindex] = red;     // Red
-                texdata.data[pixelindex+1] = green; // Green
-                texdata.data[pixelindex+2] = blue;  // Blue
-                texdata.data[pixelindex+3] = 255;   // Alpha
+                texdata.data[pixelIndex] = red;     // Red
+                texdata.data[pixelIndex+1] = green; // Green
+                texdata.data[pixelIndex+2] = blue;  // Blue
+                texdata.data[pixelIndex+3] = 255;   // Alpha
             }
         }
     }
@@ -134,7 +134,7 @@ window.onload = function() {
                 var v = y-height/2;
 
                 // Get the pixel index
-                var pixelindex = (y * width + x) * 4;
+                var pixelIndex = (y * width + x) * 4;
 
                 var dist = Math.sqrt( Math.pow((u), 2) + Math.pow((v), 2) );
  
@@ -151,12 +151,12 @@ window.onload = function() {
                 u = Math.round(u)%64;
                 v = Math.round(v)%64;
 
-                var pixelindex2 = (Math.abs(u) * width + Math.abs(v)) * 4;
+                var pixelIndex2 = (Math.abs(u) * width + Math.abs(v)) * 4;
 
-                imagedata.data[pixelindex] =   texdata.data[pixelindex2];     // Red
-                imagedata.data[pixelindex+1] = texdata.data[pixelindex2+1]; // Green
-                imagedata.data[pixelindex+2] = texdata.data[pixelindex2+2];  // Blue
-                imagedata.data[pixelindex+3] = 255;   // Alpha
+                imagedata.data[pixelIndex] =   texdata.data[pixelIndex2];     // Red
+                imagedata.data[pixelIndex+1] = texdata.data[pixelIndex2+1]; // Green
+                imagedata.data[pixelIndex+2] = texdata.data[pixelIndex2+2];  // Blue
+                imagedata.data[pixelIndex+3] = 255;   // Alpha
 
             }
         }
