@@ -138,7 +138,8 @@ window.onload = function() {
 
                 var dist = Math.sqrt( Math.pow((u), 2) + Math.pow((v), 2) );
  
-                var a = 0.5 * 256 * Math.atan2(y - height / 2.0, x - width / 2.0) / Math.PI;
+                //var a = 0.5 * 256 * Math.atan2(y - height / 2.0, x - width / 2.0) / Math.PI;
+                var a = 128 * (Math.atan2(y - height / 2.0, x - width / 2.0) / Math.PI + 1.0);
 
                 a = a + 182.5; // TODO: Why??
 
@@ -148,8 +149,8 @@ window.onload = function() {
                 u = invDist+offset/10.0;
                 v = a; //parseFloat(a)/Math.PI; //y;       // a/3.1415;
 
-                u = Math.round(u)%64;
-                v = Math.round(v)%64;
+                u = Math.floor(u)%16;
+                v = Math.floor(v)%16;
 
                 var pixelIndex2 = (Math.abs(u) * width + Math.abs(v)) * 4;
 
